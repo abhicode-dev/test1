@@ -9,6 +9,7 @@ function App() {
       
 
       hello raectjs!!!!!
+      from testingnew------
 
     </div>
   );
