@@ -12,9 +12,15 @@ function App() {
       from testingnew------
       new chnages
       again from tester
+<<<<<<< Updated upstream
       4th line
       learning merge command
       rebase from tester branch
+=======
+      1st line for stash
+      2nd line for stash 
+      3rd line
+>>>>>>> Stashed changes
 
     </div>
   );
