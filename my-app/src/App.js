@@ -1,15 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import Script1 from './Scripts/Script1';
+import Script2 from './Scripts/Script2';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       <h1>Welcome to My React App</h1>
-       
-      </header>
-    </div>
-  );
+  const selectedScript =
+    process.env.REACT_APP_SELECTED_SCRIPT || 'Script1';
+
+  return selectedScript === 'Script2'
+    ? <Script2 />
+    : <Script1 />;
 }
 
 export default App;
