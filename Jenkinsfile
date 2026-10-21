@@ -46,7 +46,9 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 dir('my-app') {
-                    bat 'npm install --no-audit --no-fund'
+                   bat 'if exist node_modules rmdir /s /q node_modules'
+            bat 'npm cache verify'
+            bat 'npm install --no-audit --no-fund'
                 }
             }
         }
