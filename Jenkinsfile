@@ -52,6 +52,13 @@ pipeline {
                 }
             }
         }
+        stage('Run React Tests') {
+    steps {
+        dir('my-app') {
+            bat 'set CI=true&& npm test -- --watchAll=false'
+        }
+    }
+}
 
         stage('Build React Application') {
             steps {
