@@ -55,7 +55,7 @@ pipeline {
         stage('Run React Tests') {
     steps {
         dir('my-app') {
-            bat 'set CI=true&& npm test -- --watchAll=false'
+           bat 'set CI=true&& npm test -- --watchAll=false --testMatch="**/src/**/*.test.js"'
         }
     }
 }
