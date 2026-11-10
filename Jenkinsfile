@@ -25,9 +25,25 @@ pipeline {
 
         // Stage 3: Execute WebdriverIO tests
         stage('Run WebdriverIO Tests') {
-            steps {
-                bat 'npx wdio run ./wdio.conf.js --spec ./features/pageContent.feature'
-            }
+          stage('Run WebdriverIO Tests') {
+    steps {
+        bat '''
+            npx wdio run ./wdio.conf.js --spec ./features/pageContent.feature
+
+            if not exist "allure-results" (
+                echo ERROR: Allure results directory was not created.
+                exit /b 1
+            )
+
+            dir /b "allure-results\\*.json" >nul 2>&1
+
+            if errorlevel 1 (
+                echo ERROR: No Allure test result files were created.
+                exit /b 1
+            )
+        '''
+    }
+}
         }
 
         // Stage 4: Generate Allure report
