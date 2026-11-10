@@ -43,7 +43,7 @@ pipeline {
             )
         '''
     }
-}
+
         }
 
         // Stage 4: Generate Allure report
