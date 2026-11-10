@@ -33,13 +33,24 @@ export const config = {
     strict: true,
     tagExpression: ''
   },
-  capabilities: [{
-    browserName: 'chrome',
-    'goog:chromeOptions': {
+//   capabilities: [{
+//     browserName: 'chrome',
+//     'goog:chromeOptions': {
+//       args: ['--window-size=1440,1000']
+//     }
+//   }],
+//   onPrepare() {
+//     console.log('Starting LHH header navigation tests...');
+//   }
+capabilities: [{
+  browserName: 'chrome',
+
+  'goog:chromeOptions': {
       args: ['--window-size=1440,1000']
-    }
-  }],
-  onPrepare() {
-    console.log('Starting LHH header navigation tests...');
+  },
+
+  'wdio:chromedriverOptions': {
+      binary: 'C:\\WebDriver\\chromedriver.exe'
   }
-};
+}],
+ };
