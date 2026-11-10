@@ -25,7 +25,7 @@ pipeline {
 
         // Stage 3: Execute WebdriverIO tests
         stage('Run WebdriverIO Tests') {
-          stage('Run WebdriverIO Tests') {
+       
     steps {
         bat '''
             npx wdio run ./wdio.conf.js --spec ./features/pageContent.feature
