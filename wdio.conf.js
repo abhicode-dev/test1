@@ -11,7 +11,14 @@ export const config = {
   framework: 'cucumber',
   injectGlobals: true,
   services: [ ],
-  reporters: ['spec'],
+  reporters: [
+    'spec',
+    ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: true
+    }]
+],
   cucumberOpts: {
     require: ['./features/step-definitions/**/*.js', './features/support/**/*.js'],
     timeout: 60000,

@@ -47,7 +47,14 @@ async handleCookiePopup() {
   // This runs only when the button is displayed.
   await button.click();
 
-  console.log('Reject All cookie button clicked successfully');
+  //console.log('Reject All cookie button clicked successfully'); 
+   await button.waitForDisplayed({
+    reverse: true,
+    timeout: 10000
+});
+
+console.log('Cookie popup dismissed successfully');
+
 }
 
 
