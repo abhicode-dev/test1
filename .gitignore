@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -21,3 +22,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+node_modules/
+.env
+.env.*
+!.env.example
+dist/
+build/
+coverage/
+allure-results/
+allure-report/
+*.log
+.DS_Store
+>>>>>>> cbcf18a (Add full-stack Shopping App project)
